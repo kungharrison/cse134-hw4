@@ -260,9 +260,51 @@ label[required=required]::after {
     color: red;
 }
 
-input:invalid {
+input:invalid, textarea:invalid {
     border-color: red;
-    color: green;
+    color: red;
+}
+
+#message-input:invalid ~ #contact-form-info-output::after {
+    content: 'Message is invalid, must be 10-1000 characters';
+}
+
+#phone-input:invalid ~ #contact-form-info-output::after {
+    content: 'Phone is invalid, must be in form of 123-456-7890';
+}
+
+#email-input:invalid ~ #contact-form-info-output::after {
+    content: 'Email is invalid, must be in form of abc@email';
+}
+
+#name-input:invalid ~ #contact-form-info-output::after {
+    content: 'Name is invalid, must be 1-100 characters';
+}
+
+input:invalid ~ #contact-form-info-output {
+    display: block !important;
+}
+
+input:invalid ~ #contact-form-error-output {
+    display: block !important;
+}
+
+textarea:invalid ~ #contact-form-info-output {
+    display: block !important;
+}
+
+textarea:invalid ~ #contact-form-error-output {
+    display: block !important;
+}
+
+#contact-form-error-output {
+    color: red;
+    display: none;
+}
+
+#contact-form-info-output {
+    color: red;
+    display: none;
 }
 
 @keyframes rainbow-background {
