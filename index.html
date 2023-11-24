@@ -20,6 +20,13 @@
         <h2>Template Heading</h2>
         <p>Template content goes here.</p>
     </template>
+    <noscript>
+        <style>
+            #toggle-theme {
+                display: none;
+            }
+        </style>
+    </noscript>
 </head>
 
 <body>
@@ -199,7 +206,7 @@
                     <input type="hidden" name="possible_bot" value="true">
                     <fieldset>
                         <legend>Contact Form</legend>
-                        <label for="role" required="required">Occupation:</label>
+                        <label for="role-input" class="required">Occupation:</label>
                         <select id="role-input">
                             <optgroup label="Professional">
                                 <option value="recruiter">Recruiter</option>
@@ -210,18 +217,18 @@
                                 <option value="other">Other</option>
                             </optgroup>
                         </select><br>
-                        <label for="subject">Subject:</label>
+                        <label for="subject-input">Subject:</label>
                             <input type="text" id="subject-input" name="subject" maxlength="30">                        
-                        <label for="name" required="required">Name:</label>
+                        <label for="name-input" class="required">Name:</label>
                             <input type="text" id="name-input" name="name" required minlength="1" maxlength="100" pattern="[ a-zA-Z\-]+"><br>
                             <output id="contact-form-info-output-name"></output>
-                        <label for="email" required="required">Email:</label>
+                        <label for="email-input" class="required">Email:</label>
                             <input type="text" id="email-input" name="email" required minlength="1" maxlength="100" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"><br>             
                             <output id="contact-form-info-output-email"></output>
-                        <label for="phone">Phone:</label>
+                        <label for="phone-input">Phone:</label>
                             <input type="tel" id="phone-input" name="phone" maxlength="12" pattern="\d{3}-\d{3}-\d{4}"><br>
                             <output id="contact-form-info-output-phone"></output>
-                        <label for="message" required="required">Comments:</label>
+                        <label for="message-input" class="required">Comments:</label>
                             <textarea id="message-input" rows="5" cols="50" placeholder="Enter message here..." minlength="10" maxlength="1000" required></textarea>
                             <output id="contact-form-info-output-counter"></output>
                             <output id="contact-form-info-output-message"></output>
@@ -266,12 +273,5 @@
     <footer>
         <p>&copy; 2023 Created by Harrison Kung</p>
     </footer>
-    <noscript>
-        <style>
-            #toggle-theme {
-                display: none;
-            }
-        </style>
-    </noscript>
 </body>
 </html>
