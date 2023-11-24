@@ -134,3 +134,29 @@ form.addEventListener('submit', (event) => {
     formErrorsField.value = JSON.stringify(formErrors);
     form.appendChild(formErrorsField);
 });
+
+// for light/dark mode
+let currentTheme = localStorage.getItem('theme');
+
+// Apply the current theme if it exists
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+}
+
+// Get the toggle button
+let themeToggleButton = document.getElementById('toggle-theme');
+
+// Add an event listener to the toggle button
+themeToggleButton.addEventListener('click', () => {
+    // Get the current theme
+    let currentTheme = document.documentElement.getAttribute('data-theme');
+
+    // Toggle the theme
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+});
