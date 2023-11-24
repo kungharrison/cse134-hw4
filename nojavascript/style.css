@@ -265,31 +265,39 @@ input:invalid, textarea:invalid {
     color: red;
 }
 
-#message-input:invalid ~ #contact-form-info-output::after {
+#message-input:invalid ~ #contact-form-info-output-message::after {
     content: 'Message is invalid, must be 10-1000 characters';
 }
 
-#phone-input:invalid ~ #contact-form-info-output::after {
+#phone-input:invalid ~ #contact-form-info-output-phone::after {
     content: 'Phone is invalid, must be in form of 123-456-7890';
 }
 
-#email-input:invalid ~ #contact-form-info-output::after {
+#email-input:invalid ~ #contact-form-info-output-email::after {
     content: 'Email is invalid, must be in form of abc@email';
 }
 
-#name-input:invalid ~ #contact-form-info-output::after {
+#name-input:invalid ~ #contact-form-info-output-name::after {
     content: 'Name is invalid, must be 1-100 characters';
 }
 
-input:invalid ~ #contact-form-info-output {
+#message-input:invalid ~ #contact-form-info-output-message {
+    display: block !important;
+}
+
+#phone-input:invalid ~ #contact-form-info-output-phone {
+    display: block !important;
+}
+
+#email-input:invalid ~ #contact-form-info-output-email {
+    display: block !important;
+}
+
+#name-input:invalid ~ #contact-form-info-output-name {
     display: block !important;
 }
 
 input:invalid ~ #contact-form-error-output {
-    display: block !important;
-}
-
-textarea:invalid ~ #contact-form-info-output {
     display: block !important;
 }
 
@@ -302,9 +310,16 @@ textarea:invalid ~ #contact-form-error-output {
     display: none;
 }
 
-#contact-form-info-output {
+#contact-form-error-output {
+    text-align: center;
+    font-style: normal;
+}
+
+output {
     color: red;
     display: none;
+    font-style: italic;
+    margin-bottom: 0.5rem;
 }
 
 @keyframes rainbow-background {
