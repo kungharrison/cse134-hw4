@@ -76,6 +76,10 @@ section.full-width {
     flex: 100%;
 }
 
+label {
+    display: block;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -265,31 +269,39 @@ input:invalid, textarea:invalid {
     color: red;
 }
 
-#message-input:invalid ~ #contact-form-info-output::after {
-    content: 'Message is invalid, must be 10-1000 characters';
+#message-input:invalid ~ #contact-form-info-output-message::after {
+    content: 'Message is invalid, must be >10 characters';
 }
 
-#phone-input:invalid ~ #contact-form-info-output::after {
+#phone-input:invalid ~ #contact-form-info-output-phone::after {
     content: 'Phone is invalid, must be in form of 123-456-7890';
 }
 
-#email-input:invalid ~ #contact-form-info-output::after {
-    content: 'Email is invalid, must be in form of abc@email';
+#email-input:invalid ~ #contact-form-info-output-email::after {
+    content: 'Email is invalid, must be in form of abc@email.com';
 }
 
-#name-input:invalid ~ #contact-form-info-output::after {
+#name-input:invalid ~ #contact-form-info-output-name::after {
     content: 'Name is invalid, must be 1-100 characters';
 }
 
-input:invalid ~ #contact-form-info-output {
+#message-input:invalid ~ #contact-form-info-output-message {
+    display: block !important;
+}
+
+#phone-input:invalid ~ #contact-form-info-output-phone {
+    display: block !important;
+}
+
+#email-input:invalid ~ #contact-form-info-output-email {
+    display: block !important;
+}
+
+#name-input:invalid ~ #contact-form-info-output-name {
     display: block !important;
 }
 
 input:invalid ~ #contact-form-error-output {
-    display: block !important;
-}
-
-textarea:invalid ~ #contact-form-info-output {
     display: block !important;
 }
 
@@ -302,9 +314,41 @@ textarea:invalid ~ #contact-form-error-output {
     display: none;
 }
 
-#contact-form-info-output {
+#contact-form-error-output {
+    text-align: center;
+    font-style: normal;
+}
+
+#contact-form-info-output-counter {
+    display: block;
+    color: white;
+    font-style: normal;
+}
+
+#contact-form-info-output-counter.warn  {
+    color: orange;
+}
+
+#contact-form-info-output-counter.error  {
+    color: red;
+}
+
+output {
     color: red;
     display: none;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.flash {
+    animation: flash 1s linear;
+}
+
+
+@keyframes flash {
+    0% {background-color: red;}
+    50% {background-color: #ffffff;}
+    100% {background-color: red;}
 }
 
 @keyframes rainbow-background {
