@@ -255,7 +255,7 @@ caption {
     cursor: pointer;
 }
 
-label[required=required]::after {
+label.required::after {
     content: ' *';
     color: red;
 }
