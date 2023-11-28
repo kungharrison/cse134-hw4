@@ -205,18 +205,6 @@
                 <form id="contact-form" action="https://httpbin.org/post" method="POST">
                     <input type="hidden" name="possible_bot" value="true">
                     <fieldset>
-                        <legend>Contact Form</legend>
-                        <label for="role-input" class="required">Occupation:</label>
-                        <select id="role-input">
-                            <optgroup label="Professional">
-                                <option value="recruiter">Recruiter</option>
-                                <option value="employer">Employer</option>
-                            </optgroup>
-                            <optgroup label="Enthusiast">
-                                <option value="developer">Developer</option>
-                                <option value="other">Other</option>
-                            </optgroup>
-                        </select><br>
                         <label for="subject-input">Subject:</label>
                             <input type="text" id="subject-input" name="subject" maxlength="30">                        
                         <label for="name-input" class="required">Name:</label>
@@ -229,7 +217,7 @@
                             <input type="tel" id="phone-input" name="phone" maxlength="12" pattern="\d{3}-\d{3}-\d{4}"><br>
                             <output id="contact-form-info-output-phone"></output>
                         <label for="message-input" class="required">Comments:</label>
-                            <textarea id="message-input" rows="5" cols="50" placeholder="Enter message here..." minlength="10" maxlength="1000" required></textarea>
+                            <textarea id="message-input" rows="5" cols="50" name="comments" form="contact-form" placeholder="Enter message here..." minlength="10" maxlength="1000" required></textarea>
                             <output id="contact-form-info-output-counter"></output>
                             <output id="contact-form-info-output-message"></output>
                         <button id="submit_info" type="submit">Submit</button>
